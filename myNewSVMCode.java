@@ -354,7 +354,7 @@ public class myNewSVMCode implements CDProtocol {
 				   n1.frobenius_norm=n1.frobenius_norm+Math.pow(n1.wtVec[row][col]);
 	             }
 			}
-			System.out.println("The square root"+Math.sqrt(n1.frobenius_norm));
+			System.out.println("The final norm:"+Math.sqrt(n1.frobenius_norm));
 	 }
 	 
 //		
