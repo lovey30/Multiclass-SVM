@@ -288,7 +288,7 @@ try{
 					dot_prod =dot_prod +( xval * wval);
 				}// dot product loop end
 		     wx[c1]=dot_prod;
-		     System.out.println(wx[c1]+"\n");
+		     System.out.println("the dot product for instance"+"["+i+"]"+"and class"+c1+"is:"+wx[c1]+"\n");
           }       
 			double max=0.0;
 			for(int z=0;z<num_class;z++)
@@ -340,7 +340,7 @@ try{
 	    	    for (int col = 0; col < num_class; col++)
 	    	    {
 	    	    	local_sgd[row][col]=wtVec[row][col]+ local_loss_sgd[row][col];
-	    	    	System.out.println("summation of local loss sgd and p(w): "+local_sgd[row][col]);
+	    	    	System.out.println("summation of local loss sgd and wtvector: "+local_sgd[row][col]);
 	    	    }
 	     }
 		double [][] newval=new double[num_Att][num_class];
@@ -366,7 +366,7 @@ try{
 	    	    for (int col = 0; col < num_class; col++)
 	    	    {
 	    	    	wtVec[row][col]=wtVec[row][col]-newval[row][col];
-	    	    	System.out.println(wtVec[row][col]);
+	    	    	System.out.println("the updated wtvector computed at each node locally"+"is:"+wtVec[row][col]);
 	    	    }
 	     }
 		
