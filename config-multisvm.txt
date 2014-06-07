@@ -1,0 +1,38 @@
+random.seed 1234
+simulation.cycles 100
+
+network.size 4
+network.node peersim.MultiSvm.MyNode
+network.node.resourcepath C:\Users\lovey\Desktop\dataset
+
+degree 2
+
+protocol.link IdleProtocol
+protocol.link.cache degree
+
+
+protocol.1 peersim.MultiSvm.myNewSVMCode
+protocol.1.linkable link
+protocol.1.alpha 0.01
+protocol.1.lambda 0.01
+protocol.1.iter 7
+protocol.1.pid 1
+
+
+
+
+init.0 peersim.dynamics.WireKOut
+init.0.protocol link
+init.0.k degree
+
+init.1.alpha 0.1
+init.1.lambda 0.1
+init.1.iter 7
+init.1.pid 1
+
+include.init 0 
+
+
+control.d0 peersim.MultiSvm.myNewSVMObserver
+control.d0.protocol 1
+
