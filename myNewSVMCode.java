@@ -17,7 +17,6 @@ import peersim.cdsim.*;
 import peersim.config.Configuration;
 import peersim.config.FastConfig;
 import peersim.core.*;
-import peersim.graph.Graph;
 
 public class myNewSVMCode implements CDProtocol {
 	
@@ -219,11 +218,11 @@ public class myNewSVMCode implements CDProtocol {
 	@Override
 	public void nextCycle(Node node1, int pid) {
 		// TODO Auto-generated method stub
+		MyNode n1 =(MyNode) node1;
 		lid=FastConfig.getLinkable(pid);
 		Linkable linkable=(Linkable)node1.getProtocol(lid);
-		MyNode n1 =(MyNode) node1;
 		
-		System.out.println("hey");
+		
 		
 		//Gossip with neighbor
 		MyNode peer = (MyNode)selectNeighbor(node1, pid);
